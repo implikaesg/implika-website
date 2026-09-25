@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>İmplika — Sürdürülebilirlik Verisini Değere Dönüştürün</title>
+<meta name="description" content="İmplika, ESG/sürdürülebilirlik verisini ölçen, doğrulayan ve raporlamaya, tedarik zinciri yönetimine ve finansal kararlara hazır hâle getiren bir sürdürülebilirlik teknolojisi sağlayıcısıdır.">
+<meta name="theme-color" content="#173a2d">
+<link rel="canonical" href="https://implika.co/">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preload" href="assets/fonts/manrope-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/manrope-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="İmplika">
+<meta property="og:url" content="https://implika.co/">
+<meta property="og:title" content="İmplika — Yeşil Dönüşümü Mümkün Kılan Teknoloji">
+<meta property="og:description" content="ESG/sürdürülebilirlik verisini ölçen, doğrulayan ve raporlanabilir hâle getiren sürdürülebilirlik teknolojisi platformu.">
+<meta property="og:image" content="https://implika.co/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="tr_TR">
+<meta property="og:locale:alternate" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+@font-face{font-family:'Manrope';font-style:normal;font-weight:400;font-display:swap;src:url(assets/fonts/manrope-latin-ext-400-normal.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:'Manrope';font-style:normal;font-weight:400;font-display:swap;src:url(assets/fonts/manrope-latin-400-normal.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Manrope';font-style:normal;font-weight:500;font-display:swap;src:url(assets/fonts/manrope-latin-ext-500-normal.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:'Manrope';font-style:normal;font-weight:500;font-display:swap;src:url(assets/fonts/manrope-latin-500-normal.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Manrope';font-style:normal;font-weight:600;font-display:swap;src:url(assets/fonts/manrope-latin-ext-600-normal.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:'Manrope';font-style:normal;font-weight:600;font-display:swap;src:url(assets/fonts/manrope-latin-600-normal.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Manrope';font-style:normal;font-weight:700;font-display:swap;src:url(assets/fonts/manrope-latin-ext-700-normal.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:'Manrope';font-style:normal;font-weight:700;font-display:swap;src:url(assets/fonts/manrope-latin-700-normal.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Manrope';font-style:normal;font-weight:800;font-display:swap;src:url(assets/fonts/manrope-latin-ext-800-normal.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:'Manrope';font-style:normal;font-weight:800;font-display:swap;src:url(assets/fonts/manrope-latin-800-normal.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'DM Mono';font-style:normal;font-weight:400;font-display:swap;src:url(assets/fonts/dm-mono-latin-ext-400-normal.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:'DM Mono';font-style:normal;font-weight:400;font-display:swap;src:url(assets/fonts/dm-mono-latin-400-normal.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'DM Mono';font-style:normal;font-weight:500;font-display:swap;src:url(assets/fonts/dm-mono-latin-ext-500-normal.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:'DM Mono';font-style:normal;font-weight:500;font-display:swap;src:url(assets/fonts/dm-mono-latin-500-normal.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+
+*,:before,:after{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}
+html{line-height:1.5;-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+h1,h2,h3,h4,p,figure,blockquote{margin:0;font-size:inherit;font-weight:inherit}
+ul,ol{list-style:none;margin:0;padding:0}
+img,svg{display:block;vertical-align:middle}
+img{max-width:100%;height:auto}
+button,input,select,textarea{font:inherit;color:inherit;margin:0;padding:0}
+button{border:0;cursor:pointer;background:transparent}
+a{color:inherit;text-decoration:none}
+[hidden]{display:none!important}
+:focus-visible{outline:2px solid #7fae54;outline-offset:3px}
+
+:root{font-family:Manrope,"Segoe UI",Helvetica,Arial,sans-serif;color:#17201d;background:#f4f5f0;font-synthesis:none;
+--ink:#17201d;--muted:#66716c;--line:#d9ded7;--paper:#f4f5f0;--white:#fbfcf9;--forest:#173a2d;--green:#7fae54;--mint:#dcebd8;--orange:#c96443;
+--mono:"DM Mono",ui-monospace,Menlo,Consolas,monospace}
+body{margin:0;min-width:320px;background:var(--paper);color:var(--ink);font-family:Manrope,"Segoe UI",Helvetica,Arial,sans-serif;font-size:14px}
+h1,h2,h3{text-wrap:balance}
+.container{width:min(1180px,calc(100% - 64px));margin:0 auto}
+
+/* Header */
+.site-header{height:88px;border-bottom:1px solid rgba(23,32,29,.08);position:relative;z-index:10;background:#f4f5f0f5}
+.nav-wrap{height:100%;display:flex;align-items:center;justify-content:space-between;gap:28px}
+.logo{width:170px;height:42px;display:inline-flex;align-items:center}
+.logo-img{height:40px;width:auto;object-fit:contain}
+.main-nav{display:flex;align-items:center;gap:22px;margin-left:auto}
+.nav-item{position:relative}
+.nav-item>a,.nav-item>button{display:flex;align-items:center;gap:5px;background:transparent;color:#4c5851;font-size:12px;font-weight:600;padding:16px 0;transition:color .2s}
+.nav-item>a:hover,.nav-item>button:hover,.nav-item>a.current{color:var(--forest)}
+.nav-item svg{transition:transform .2s}
+.nav-item.open>button svg{transform:rotate(180deg)}
+.dropdown{display:none;position:absolute;min-width:210px;top:47px;left:-18px;padding:8px;background:var(--white);border:1px solid var(--line);box-shadow:0 16px 34px #1a2c221a}
+.nav-item.open .dropdown{display:grid}
+.dropdown a{padding:11px 12px;font-size:12px;color:var(--muted)}
+.dropdown a:hover{background:var(--mint);color:var(--forest)}
+.dropdown-parent{font-weight:700;color:var(--forest)!important;border-bottom:1px solid var(--line);margin-bottom:4px}
+.nav-actions{display:flex;align-items:center;gap:20px}
+.button{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:15px 20px;background:var(--forest);color:#fff;border:1px solid var(--forest);font-size:12px;font-weight:700;letter-spacing:.01em;transition:background .2s,transform .2s}
+.button:hover{background:#245843;transform:translateY(-2px)}
+.button-small{padding:11px 14px;font-size:11px}
+.button svg{transition:transform .2s}
+.button:hover svg{transform:translate(3px)}
+.button.ghost{background:transparent;color:var(--forest)}
+.button.ghost:hover{background:var(--mint)}
+.text-link{display:inline-flex;align-items:center;gap:8px;color:var(--forest);font-weight:700;font-size:12px}
+.text-link svg{transition:transform .2s}
+.text-link:hover svg{transform:translate(3px,-3px)}
+.menu-button{display:none;background:none;color:var(--forest);padding:5px}
+
+/* Hero */
+.hero{min-height:650px;background:var(--paper);position:relative;overflow:hidden}
+.hero-grid{min-height:595px;display:grid;grid-template-columns:54% 46%;align-items:center}
+.hero-grid>*{min-width:0}
+.hero-copy{padding:72px 0 65px;position:relative;z-index:1;max-width:630px}
+.eyebrow{display:flex;align-items:center;gap:9px;color:var(--orange);font:10px var(--mono);text-transform:uppercase;letter-spacing:.11em;margin-bottom:20px}
+.eyebrow span{width:25px;height:1px;background:var(--orange);display:inline-block;flex:0 0 auto}
+.hero h1{max-width:680px;color:var(--forest);font-size:clamp(46px,5vw,75px);line-height:1.02;letter-spacing:-.07em;margin:0 0 25px;font-weight:700}
+h1 em,h2 em{color:var(--green);font-style:normal}
+.hero-copy>p{color:var(--muted);line-height:1.8;max-width:550px;font-size:14px;margin:0 0 28px}
+.hero-actions{display:flex;align-items:center;gap:27px;flex-wrap:wrap}
+.hero-footnote{display:flex;gap:8px;align-items:center;color:#89948b;font:10px var(--mono);margin-top:57px}
+.hero-art{height:530px;position:relative;display:flex;align-items:center;justify-content:center}
+.data-visual{width:405px;height:405px;position:relative}
+.visual-grid{position:absolute;top:11%;right:-12%;bottom:-9%;left:3%;opacity:.3;background-image:linear-gradient(#9daaa0 1px,transparent 1px),linear-gradient(90deg,#9daaa0 1px,transparent 1px);background-size:30px 30px;transform:perspective(600px) rotateX(57deg) rotate(-25deg);-webkit-mask-image:linear-gradient(to bottom,transparent,black 35%,transparent 90%);mask-image:linear-gradient(to bottom,transparent,black 35%,transparent 90%)}
+.visual-orbit{position:absolute;border:1px solid #b2c5ad;border-radius:50%;left:50%;top:50%;transform:translate(-50%,-50%) rotate(-28deg)}
+.orbit-one{width:355px;height:160px}
+.orbit-two{width:250px;height:360px;transform:translate(-50%,-50%) rotate(42deg);border-color:#cad8c5}
+.visual-core{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);height:104px;width:104px;display:grid;align-content:center;justify-items:center;gap:5px;background:var(--forest);color:#fff;border-radius:50%;box-shadow:0 0 0 15px #7fae5421,0 0 0 40px #7fae540d}
+.visual-core span{font:9px var(--mono);text-align:center;letter-spacing:.12em}
+.visual-node{position:absolute;display:grid;place-items:center;background:var(--white);width:44px;height:44px;border-radius:50%;color:var(--orange);border:1px solid #cbd8c7;box-shadow:0 5px 15px #1e3f2d14}
+.node-one{top:35px;left:58px}.node-two{top:85px;right:18px;color:#658e52}.node-three{bottom:40px;left:45px;color:#8b8066}
+.visual-line{position:absolute;height:1px;background:#aec2a9;transform-origin:left}
+.line-one{width:93px;left:95px;top:93px;transform:rotate(31deg)}
+.line-two{width:87px;right:44px;top:118px;transform:rotate(157deg)}
+.line-three{width:105px;left:79px;bottom:73px;transform:rotate(-28deg)}
+.art-label{position:absolute;font:9px var(--mono);letter-spacing:.17em;color:#8b978b;line-height:1.7}
+.art-label strong{color:var(--forest);font-weight:500}
+.label-top{top:45px;right:18px}.label-bottom{bottom:22px;left:20px}
+.label-bottom span{color:var(--orange);padding:0 5px}
+.hero-scroll{position:absolute;bottom:22px;left:max(32px,calc((100vw - 1180px)/2));display:flex;align-items:center;gap:11px;color:#9da9a0;font:10px var(--mono)}
+.hero-scroll div{width:55px;height:1px;background:#b7c3ba}
+.hero-scroll span:first-child{color:var(--forest)}
+@media (prefers-reduced-motion:no-preference){
+ .orbit-one{animation:spin1 40s linear infinite}.orbit-two{animation:spin2 55s linear infinite}
+ @keyframes spin1{to{transform:translate(-50%,-50%) rotate(332deg)}}
+ @keyframes spin2{to{transform:translate(-50%,-50%) rotate(-318deg)}}
+}
+
+/* Sections */
+.flow-section,.audience-section,.all-products{background:var(--white)}
+.flow-section{padding:115px 0 120px}
+.section-heading.centered{text-align:center;max-width:680px;margin:0 auto 62px}
+.section-heading.centered .eyebrow{justify-content:center}
+.section-heading h2,.section-heading.split h2{color:var(--forest);font-size:clamp(30px,3.3vw,48px);line-height:1.08;letter-spacing:-.06em;margin:0;font-weight:700}
+.section-heading p{color:var(--muted);font-size:13px;line-height:1.8;margin:17px auto 0;max-width:530px}
+.flow-line{display:grid;grid-template-columns:repeat(5,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.flow-step{position:relative;padding:25px 22px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:14px}
+.flow-step:not(:last-child):after{content:"";position:absolute;right:0;top:0;height:100%;width:1px;background:var(--line)}
+.flow-step>svg{position:absolute;right:-8px;top:50%;color:var(--green);background:var(--white);z-index:1}
+.flow-step span,.product-index,.large-number{color:var(--orange);font:10px var(--mono)}
+.flow-step strong{color:var(--forest);font-size:14px}
+.solutions-section{padding:123px 0;background:var(--paper)}
+.solutions-section.compact{padding:90px 0}
+.section-heading.split{display:flex;align-items:flex-end;justify-content:space-between;gap:50px;margin-bottom:55px}
+.section-heading.split>div{max-width:650px}
+.section-heading.split p{margin:0;width:330px;font-size:13px;line-height:1.75}
+.solution-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.solution-card{min-height:310px;padding:25px 22px;background:var(--white);border:1px solid #e4e8e1;display:flex;flex-direction:column;transition:transform .25s,box-shadow .25s,background .25s}
+.solution-card:hover{transform:translateY(-6px);background:var(--forest);color:#fff;box-shadow:0 18px 34px #153b2c24}
+.card-top{display:flex;justify-content:space-between;color:var(--green);margin-bottom:45px}
+.solution-card:hover .card-top{color:#a9ce89}
+.card-top span{font:10px var(--mono)}
+.solution-card h3{font-size:18px;letter-spacing:-.04em;color:var(--forest);margin:0 0 15px;font-weight:700}
+.solution-card:hover h3{color:#fff}
+.solution-card p{color:var(--muted);font-size:12px;line-height:1.7;margin:0 0 24px}
+.solution-card:hover p{color:#c3d3c9}
+.card-link{display:flex;align-items:center;gap:7px;margin-top:auto;color:var(--forest);font-size:11px;font-weight:700}
+.solution-card:hover .card-link{color:#fff}
+.audience-section{padding:115px 0}
+.audience-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.audience-card{padding:42px;background:var(--mint);position:relative;overflow:hidden;min-height:330px}
+.audience-card:nth-child(2){background:#e7e7da}
+.audience-icon{color:var(--forest);margin-bottom:47px}
+.audience-card h3{color:var(--forest);font-size:26px;margin:0 0 12px;letter-spacing:-.05em;font-weight:700}
+.audience-card p{color:#5c6d60;font-size:13px;line-height:1.75;max-width:420px}
+.audience-card ul{display:flex;flex-wrap:wrap;gap:9px 21px;padding:11px 0 20px;margin:0;color:#56675b;font-size:11px}
+.audience-card li{display:flex;align-items:center;gap:7px}
+.audience-card li svg{color:var(--orange)}
+.products-section{padding:117px 0;background:var(--paper)}
+.product-list{border-top:1px solid var(--line)}
+.product-row{min-height:90px;display:grid;grid-template-columns:60px 1.2fr 2fr 150px 24px;align-items:center;gap:20px;border-bottom:1px solid var(--line);transition:padding .2s,background .2s}
+.product-row:hover{padding:0 16px;background:var(--white)}
+.product-row>svg{color:var(--green)}
+.product-name{color:var(--forest);font-size:16px;font-weight:700}
+.product-description{color:var(--muted);font-size:11px;line-height:1.5}
+.status{justify-self:start;padding:6px 9px;border:1px solid #cbd2ca;color:#7b867d;font:9px var(--mono)}
+.status.available{color:#5e8c48;border-color:#b9d2ad}
+.cta-band{background:var(--forest);color:#fff;padding:92px 0;position:relative;overflow:hidden}
+.cta-band:after{content:"";position:absolute;width:420px;height:420px;border:1px solid rgba(177,210,155,.2);border-radius:50%;right:8%;top:-130px;box-shadow:0 0 0 54px #b1d29b0d,0 0 0 112px #b1d29b08}
+.cta-inner{display:flex;align-items:center;justify-content:space-between;gap:30px;position:relative;z-index:1}
+.cta-band .eyebrow,.accent-intro .eyebrow,.about-closing .eyebrow,.iaas-section .eyebrow{color:#a8cb8c}
+.cta-band .eyebrow span,.accent-intro .eyebrow span,.about-closing .eyebrow span,.iaas-section .eyebrow span{background:#a8cb8c}
+.cta-band h2{font-size:clamp(34px,4.2vw,58px);line-height:1.06;letter-spacing:-.06em;margin:0;font-weight:700}
+.cta-band h2 em{color:#a8cb8c}
+.cta-band .button{background:#b0d28d;color:var(--forest);border-color:#b0d28d}
+.cta-band .button:hover{background:#fff}
+
+/* Inner pages */
+.page-intro{padding:100px 0 105px;background:var(--paper)}
+.page-intro h1{color:var(--forest);max-width:820px;font-size:clamp(44px,5.2vw,72px);line-height:1.03;letter-spacing:-.07em;margin:0 0 25px;font-weight:700}
+.page-intro p{color:var(--muted);font-size:15px;line-height:1.8;max-width:650px;margin:0}
+.accent-intro{background:var(--forest)}
+.accent-intro h1{color:#fff}
+.accent-intro p{color:#bfcec2}
+.detail-section{background:var(--white);padding:125px 0}
+.detail-grid{display:grid;grid-template-columns:minmax(0,37fr) minmax(0,63fr);gap:80px}
+.feature-icon{display:grid;place-items:center;width:55px;height:55px;color:var(--orange);border:1px solid #dfc8be;margin-bottom:55px}
+.detail-sticky .large-number{font-size:13px}
+.detail-sticky h2{color:var(--forest);font-size:42px;line-height:1.04;letter-spacing:-.065em;margin:16px 0;font-weight:700}
+.detail-content{padding-top:25px;min-width:0}
+.content-block{margin-bottom:58px}
+.lead{color:var(--forest);font-size:22px;line-height:1.45;letter-spacing:-.035em;margin:0}
+.content-block h3{color:var(--forest);font-size:24px;margin:0 0 15px;letter-spacing:-.04em;font-weight:700}
+.content-block p:not(.lead){color:var(--muted);line-height:1.8;font-size:14px;max-width:600px}
+.capability-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:0 20px;margin-bottom:65px;border-top:1px solid var(--line)}
+.capability{display:flex;gap:16px;padding:20px 0;border-bottom:1px solid var(--line)}
+.capability span{color:var(--orange);font:10px var(--mono);padding-top:3px}
+.capability strong{color:var(--forest);font-size:13px}
+.about-story{background:var(--white);padding:125px 0}
+.about-story.alt{background:var(--paper)}
+.about-story.alt .story-aside .large-number{color:var(--green)}
+.expertise-icon{display:grid;place-items:center;width:44px;height:44px;color:var(--orange);border:1px solid #dfc8be;margin:18px 0 0}
+.about-closing{background:var(--forest);color:#fff;padding:95px 0}
+.about-closing h2{font-size:clamp(34px,4vw,54px);line-height:1.06;letter-spacing:-.065em;margin:0 0 20px;font-weight:700}
+.about-closing p{color:#bfcec2;font-size:15px;line-height:1.8;max-width:620px;margin:0}
+.about-board{background:var(--white);padding-top:120px}
+.story-grid{display:grid;grid-template-columns:minmax(0,32fr) minmax(0,68fr);gap:80px}
+.story-aside .large-number{display:block;font-size:13px;margin-bottom:95px}
+.story-copy{min-width:0}
+.story-copy h2{color:var(--forest);max-width:680px;font-size:45px;line-height:1.06;letter-spacing:-.065em;margin:0 0 27px;font-weight:700}
+.story-copy p{color:var(--muted);font-size:14px;line-height:1.9;max-width:680px}
+.story-copy p+p{margin-top:16px}
+.expertise-section,.ecosystem-section{padding:120px 0;background:var(--paper)}
+.expertise-grid{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line)}
+.expertise-item{padding:25px 24px 10px 0;border-right:1px solid var(--line);margin-right:24px}
+.expertise-item:last-child{border:0;margin-right:0}
+.expertise-item>span{color:var(--orange);font:10px var(--mono)}
+.expertise-item h3{color:var(--forest);font-size:18px;letter-spacing:-.04em;margin:45px 0 13px;font-weight:700}
+.expertise-item p,.ecosystem-card p{color:var(--muted);font-size:12px;line-height:1.7}
+.ecosystem-section{background:var(--white)}
+.ecosystem-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.ecosystem-card{min-height:285px;padding:25px 20px;border:1px solid var(--line)}
+.ecosystem-brand{height:42px;color:var(--orange);font:11px var(--mono)}
+.mini-brand{display:grid;place-items:center;height:29px;width:29px;background:var(--forest);color:#fff;font:16px Manrope,sans-serif}
+.ecosystem-card h3{color:var(--forest);font-size:19px;letter-spacing:-.05em;margin:28px 0 8px;font-weight:700}
+.ecosystem-card strong{color:var(--green);font-size:11px}
+.ecosystem-card p{margin-top:16px}
+.audience-detail{background:var(--white);padding:125px 0}
+.audience-detail-grid{display:grid;grid-template-columns:minmax(0,46fr) minmax(0,54fr);gap:90px}
+.audience-detail-grid h2{color:var(--forest);font-size:43px;line-height:1.06;letter-spacing:-.065em;margin:0;font-weight:700}
+.audience-detail-grid>div:last-child{padding-top:34px;min-width:0}
+.check-list{padding:18px 0 25px;margin:24px 0 0;border-top:1px solid var(--line)}
+.check-list li{display:flex;align-items:center;gap:13px;color:var(--forest);font-size:13px;padding:11px 0;border-bottom:1px solid var(--line)}
+.check-list li span{display:grid;place-items:center;height:21px;width:21px;border-radius:50%;background:var(--mint);color:var(--green);flex:0 0 auto}
+.board-section{background:var(--white);padding:115px 0 140px}
+.board-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}
+.board-card{border:1px solid var(--line);padding:16px}
+.portrait{height:330px;background:#dfe7dc;position:relative;display:grid;place-items:center;overflow:hidden}
+.portrait:after{content:"";height:215px;width:215px;border:1px solid rgba(23,58,45,.25);border-radius:50%;position:absolute}
+.portrait span{position:relative;z-index:1;color:var(--forest);font-size:48px;font-weight:700;letter-spacing:-.1em}
+.portrait-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(23,58,45,.1) 1px,transparent 1px),linear-gradient(90deg,rgba(23,58,45,.1) 1px,transparent 1px);background-size:28px 28px;opacity:.35;transform:rotate(18deg) scale(1.4)}
+.board-index{display:block;margin-top:24px;color:var(--orange);font:10px var(--mono)}
+.board-card h2{color:var(--forest);font-size:20px;letter-spacing:-.05em;margin:13px 0 7px;font-weight:700}
+.board-card p{color:var(--green);font-size:11px;margin:0 0 12px}
+.insights-videos{background:var(--white);padding:100px 0 80px}
+.video-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.video-card{border:1px solid var(--line);background:var(--paper);overflow:hidden;transition:transform .25s,box-shadow .25s}
+.video-card:hover{transform:translateY(-5px);box-shadow:0 14px 28px #173a2d1a}
+.video-thumb{height:180px;background:var(--forest);position:relative;display:grid;place-items:center}
+.play-btn{display:grid;place-items:center;width:52px;height:52px;border-radius:50%;background:#ffffff26;border:1px solid rgba(255,255,255,.3);color:#fff;transition:background .2s,transform .2s}
+.video-card:hover .play-btn{background:var(--green);transform:scale(1.1)}
+.video-topic{position:absolute;top:12px;left:12px;font:9px var(--mono);color:#a8cb8c;letter-spacing:.12em;text-transform:uppercase}
+.video-meta{padding:18px 16px 22px}
+.video-meta strong{display:block;color:var(--forest);font-size:14px;line-height:1.35;letter-spacing:-.03em;margin-bottom:7px}
+.video-meta span{color:var(--muted);font-size:11px}
+.insights-articles{background:var(--paper);padding:80px 0 120px}
+.article-list{border-top:1px solid var(--line)}
+.article-row{display:grid;grid-template-columns:130px 1fr 90px 22px;align-items:center;gap:20px;padding:24px 0;border-bottom:1px solid var(--line);transition:padding .2s,background .2s}
+.article-row:hover{padding:24px 14px;background:var(--white)}
+.article-tag{color:var(--orange);font:9px var(--mono);text-transform:uppercase;letter-spacing:.1em}
+.article-row strong{color:var(--forest);font-size:15px;letter-spacing:-.03em}
+.article-date{color:var(--muted);font:10px var(--mono)}
+.article-row svg{color:var(--green)}
+.iaas-section{background:var(--forest);color:#fff;padding:90px 0}
+.iaas-grid{display:grid;grid-template-columns:minmax(0,38fr) minmax(0,62fr);gap:70px;align-items:center}
+.iaas-section h2{color:#fff;font-size:clamp(28px,3vw,42px);line-height:1.08;letter-spacing:-.06em;margin:0;font-weight:700}
+.iaas-body p{color:#bfcec2;font-size:14px;line-height:1.85;margin:0 0 28px}
+.iaas-pills{display:flex;flex-wrap:wrap;gap:10px}
+.iaas-pills span{padding:8px 16px;border:1px solid rgba(168,203,140,.3);color:#a8cb8c;font:11px var(--mono);border-radius:99px}
+
+/* Forms */
+.demo-overlay{position:fixed;inset:0;background:#17201d99;backdrop-filter:blur(4px);z-index:1000;display:grid;place-items:center;padding:20px;overflow-y:auto}
+.demo-modal{background:var(--white);max-width:480px;width:100%;padding:40px;position:relative;box-shadow:0 24px 60px #173a2d33}
+.demo-close{position:absolute;top:16px;right:16px;color:var(--muted);padding:4px}
+.demo-close:hover{color:var(--forest)}
+.demo-header h2{color:var(--forest);font-size:28px;line-height:1.1;letter-spacing:-.05em;margin:0;font-weight:700}
+.form{display:grid;gap:22px}
+.demo-modal .form{margin-top:28px;gap:20px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.form label{display:grid;gap:9px;color:var(--forest);font-size:11px;font-weight:700}
+.form input,.form textarea,.form select{width:100%;border:0;border-bottom:1px solid #cbd3cb;background:transparent;color:var(--ink);padding:10px 0;outline:none;border-radius:0;resize:vertical;font-weight:500;font-size:14px}
+.form input:focus,.form textarea:focus,.form select:focus{border-color:var(--green)}
+.form .button{justify-self:start;margin-top:8px}
+.demo-modal .form .button{justify-self:stretch}
+.form small{color:#89948b;font-size:10px;line-height:1.5}
+.contact-section{background:var(--white);padding:120px 0}
+.contact-grid{display:grid;grid-template-columns:minmax(0,38fr) minmax(0,62fr);gap:95px}
+.contact-grid>*{min-width:0}
+.contact-aside h2{color:var(--forest);font-size:42px;line-height:1.06;letter-spacing:-.065em;margin:0 0 24px;font-weight:700}
+.contact-aside>p{color:var(--muted);line-height:1.8;font-size:13px}
+.contact-mail{display:grid;gap:8px;margin-top:36px;padding:20px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.contact-mail small{color:var(--orange);font:10px var(--mono);text-transform:uppercase;letter-spacing:.11em}
+.mail-line{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.mail-line a{color:var(--forest);font-size:20px;font-weight:700;letter-spacing:-.03em;user-select:all}
+.copy-btn{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line);padding:6px 10px;color:var(--forest);font:10px var(--mono);background:var(--white)}
+.copy-btn:hover{background:var(--mint)}
+.contact-note{display:flex;gap:11px;color:#718074;font-size:11px;line-height:1.5;margin-top:36px}
+.contact-note svg{flex:0 0 auto;color:var(--green)}
+.sent{display:grid;gap:16px;padding:26px;background:var(--mint)}
+.sent h3{color:var(--forest);font-size:20px;letter-spacing:-.04em;font-weight:700;display:flex;gap:10px;align-items:center}
+.sent h3 svg{color:var(--green)}
+.sent p{color:#4c5851;font-size:13px;line-height:1.7}
+.sent pre{margin:0;white-space:pre-wrap;word-break:break-word;background:var(--white);border:1px solid #c9dcc4;padding:14px;font:12px/1.6 var(--mono);color:var(--ink);max-height:220px;overflow:auto}
+.sent .actions{display:flex;gap:12px;flex-wrap:wrap}
+
+/* Footer */
+.site-footer{background:#122c23;color:#c6d2c8;padding:75px 0 25px}
+.footer-top{display:grid;grid-template-columns:1fr 1fr;gap:80px;padding-bottom:75px}
+.footer-top>div>p{max-width:315px;color:#92a499;font-size:11px;line-height:1.8;margin-top:27px}
+.footer-columns{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.footer-columns>div{display:flex;flex-direction:column;gap:13px;min-width:0}
+.footer-columns strong{color:#96c57a;font:10px var(--mono);letter-spacing:.1em;text-transform:uppercase;margin-bottom:6px}
+.footer-columns a,.footer-columns span{color:#aebcb1;font-size:11px}
+.footer-columns a:hover{color:#fff}
+.footer-bottom{display:flex;align-items:center;justify-content:space-between;border-top:1px solid rgba(201,218,204,.16);padding-top:23px;color:#84978b;font:10px var(--mono)}
+.socials{display:flex;gap:14px}
+.socials a{display:grid;place-items:center;color:#aebcb1}
+.socials a:hover{color:#fff}
+
+@media (max-width:1080px){.main-nav{gap:12px}.nav-item>a,.nav-item>button{font-size:11px}.nav-actions{gap:11px}.hero-grid{grid-template-columns:56% 44%}.data-visual{transform:scale(.85)}.container{width:min(100% - 48px,1180px)}.product-row{grid-template-columns:50px 1.2fr 2fr 140px 24px}}
+@media (max-width:820px){
+ .site-header{height:74px}
+ .main-nav{display:none;position:absolute;top:74px;left:0;width:100%;padding:18px 24px 25px;background:var(--white);border-bottom:1px solid var(--line);box-shadow:0 14px 20px #173a2d14}
+ .main-nav.open{display:grid}
+ .nav-item>a,.nav-item>button{padding:12px 0;width:100%;justify-content:space-between}
+ .dropdown{position:static;box-shadow:none;border:0;background:var(--paper);margin:4px 0 8px}
+ .menu-button{display:block}
+ .nav-actions .button-small{display:none}
+ .hero-grid{grid-template-columns:1fr}.hero{min-height:auto}.hero-copy{padding:72px 0 24px}.hero-art{height:410px}.data-visual{transform:scale(.75)}.label-top{top:25px}.hero-scroll{display:none}
+ .flow-line{grid-template-columns:1fr;border-bottom:0}
+ .flow-step{border-bottom:1px solid var(--line);padding:17px 0;flex-direction:row;align-items:center;text-align:left}
+ .flow-step>svg{right:0;top:50%;transform:translateY(-50%) rotate(90deg)}
+ .flow-step:not(:last-child):after{display:none}
+ .flow-section,.audience-section,.solutions-section,.products-section{padding:78px 0}
+ .section-heading.split{display:block}.section-heading.split p{margin-top:20px;width:auto}
+ .solution-grid{grid-template-columns:repeat(2,1fr)}.audience-grid{grid-template-columns:1fr;gap:12px}
+ .product-row{grid-template-columns:42px 1fr 22px;gap:8px;padding:17px 0}
+ .product-description,.product-row .status{display:none}
+ .cta-inner{display:block}.cta-inner .button{margin-top:27px}
+ .page-intro{padding:75px 0 78px}
+ .detail-grid,.story-grid,.audience-detail-grid,.contact-grid,.iaas-grid{grid-template-columns:1fr;gap:45px}
+ .detail-sticky h2,.story-copy h2,.audience-detail-grid h2,.contact-aside h2{font-size:37px}
+ .detail-content{padding-top:0}.story-aside .large-number{margin-bottom:35px}
+ .expertise-grid,.ecosystem-grid,.video-grid{grid-template-columns:repeat(2,1fr);gap:23px}
+ .expertise-item{border-right:0;margin-right:0}.ecosystem-card{min-height:245px}
+ .board-grid{grid-template-columns:repeat(2,1fr)}.portrait{height:260px}
+ .article-row{grid-template-columns:1fr 22px;gap:6px 14px}.article-row .article-tag{grid-column:1/-1}.article-date{display:none}
+ .footer-top{grid-template-columns:1fr;gap:45px}.footer-bottom{flex-wrap:wrap;gap:17px}
+}
+@media (max-width:480px){
+ .container{width:calc(100% - 40px)}.logo{width:140px}
+ .hero h1{font-size:clamp(30px,9.4vw,40px)}.page-intro h1{font-size:clamp(32px,10vw,40px)}.hero-copy>p{font-size:13px}.hero-art{height:330px}.data-visual{transform:scale(.58)}
+ .art-label{font-size:8px}.label-top{right:0}.label-bottom{left:0}
+ .solution-grid,.video-grid{grid-template-columns:1fr}.solution-card{min-height:245px}
+ .audience-card{padding:27px}.audience-card h3{font-size:23px}
+ .capability-grid{grid-template-columns:1fr}
+ .expertise-grid,.ecosystem-grid,.board-grid{grid-template-columns:1fr}
+ .form-row{grid-template-columns:1fr;gap:22px}
+ .contact-section{padding:80px 0}.demo-modal{padding:32px 22px}
+ .footer-columns{grid-template-columns:1fr 1fr;row-gap:35px}.footer-columns>div:last-child{grid-column:1/-1}
+ .footer-bottom{display:grid}.footer-bottom .socials{order:-1}
+}
+
+.language-switch{display:flex;align-items:center;gap:7px;font:11px var(--mono);color:#9aa39c}
+.language-switch button{padding:2px 0;color:inherit}
+.language-switch button[aria-pressed="true"]{color:var(--forest);font-weight:500}
+.language-switch button:hover{color:var(--forest)}
+.hero-audience{display:flex;flex-wrap:wrap;align-items:center;gap:10px 22px;margin-top:24px;font-size:12px;color:var(--muted)}
+.hero-audience a{display:inline-flex;align-items:center;gap:6px;color:var(--forest);font-weight:600;border-bottom:1px solid #b9d2ad;padding-bottom:2px}
+.hero-audience a:hover{border-color:var(--forest)}
+.hero-footnote{margin-top:44px}
+</style>
+
+</head>
+<body>
+<header class="site-header"><div class="container nav-wrap" id="header-inner"></div></header>
+<main id="app"></main>
+<footer class="site-footer"><div class="container" id="footer-inner"></div></footer>
+<div class="demo-overlay" id="demo" hidden>
+ <div class="demo-modal" role="dialog" aria-modal="true" aria-labelledby="demo-title" id="demo-inner"></div>
+</div>
+
+<script>
+const ICONS={
+"arrow-right":'<path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>',
+"arrow-up-right":'<path d="M7 7h10v10"/><path d="M7 17 17 7"/>',
+"chevron-down":'<path d="m6 9 6 6 6-6"/>',
+"menu":'<line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/>',
+"x":'<path d="M18 6 6 18"/><path d="m6 6 12 12"/>',
+"sparkles":'<path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/><path d="M20 3v4"/><path d="M22 5h-4"/><path d="M4 17v2"/><path d="M5 18H3"/>',
+"database":'<ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5V19A9 3 0 0 0 21 19V5"/><path d="M3 12A9 3 0 0 0 21 12"/>',
+"chart-column":'<path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/>',
+"shield-check":'<path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/>',
+"circle-dollar-sign":'<circle cx="12" cy="12" r="10"/><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"/><path d="M12 18V6"/>',
+"target":'<circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/>',
+"network":'<rect x="16" y="16" width="6" height="6" rx="1"/><rect x="2" y="16" width="6" height="6" rx="1"/><rect x="9" y="2" width="6" height="6" rx="1"/><path d="M5 16v-3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3"/><path d="M12 12V8"/>',
+"earth":'<path d="M21.54 15H17a2 2 0 0 0-2 2v4.54"/><path d="M7 3.34V5a3 3 0 0 0 3 3a2 2 0 0 1 2 2c0 1.1.9 2 2 2a2 2 0 0 0 2-2c0-1.1.9-2 2-2h3.17"/><path d="M11 21.95V18a2 2 0 0 0-2-2a2 2 0 0 1-2-2v-1a2 2 0 0 0-2-2H2.05"/><circle cx="12" cy="12" r="10"/>',
+"check":'<path d="M20 6 9 17l-5-5"/>',
+"circle-check":'<circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/>',
+"copy":'<rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/>',
+"mail":'<rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>',
+"play":'<polygon points="6 3 20 12 6 21 6 3"/>',
+"linkedin":'<path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/>'
+};
+function hydrate(root){root.querySelectorAll('i[data-i]').forEach(el=>{const s=el.getAttribute('s')||24;el.outerHTML=`<svg xmlns="http://www.w3.org/2000/svg" width="${s}" height="${s}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${ICONS[el.dataset.i]||''}</svg>`})}
+
+const EMAIL='info@implika.co';
+const LOGO='assets/logo.webp';
+const LINKEDIN='https://www.linkedin.com/company/i%CC%87mplika-teknoloji-ve-s%C3%BCrd%C3%BCr%C3%BClebilirlik-hizmetleri/';
+
+/* ---------------- Content ---------------- */
+const L={
+tr:{
+ brand:'İmplika',
+ meta:{title:'İmplika — Sürdürülebilirlik Verisini Değere Dönüştürün',desc:'İmplika, ESG/sürdürülebilirlik verisini ölçen, doğrulayan ve raporlamaya, tedarik zinciri yönetimine ve finansal kararlara hazır hâle getiren bir sürdürülebilirlik teknolojisi sağlayıcısıdır.'},
+ nav:{modules:'Modüller',allModules:'Tüm Modüller',companies:'Şirketler İçin',institutions:'Finansal Kurumlar',about:'Hakkımızda',board:'Yönetim Kurulu',insights:'İçgörüler',demo:'Demo Talep Edin',menu:'Menüyü aç',home:'İmplika anasayfa',lang:'Dil seçimi',mainNav:'Ana menü'},
+ cta:{eb:'Birlikte ilerleyelim',h2:'Sürdürülebilirlik veriniz<br><em>nerede duruyor?</em>',btn:'Demo Talep Edin'},
+ sol:{eb:'Çekirdek modüller',h2:'Sürdürülebilirlik verisini değer zincirine bağlayın.',p:'İmplika, modüler teknoloji motoruyla veriden finansal karara uzanan bütünleşik bir yapı sunar.',link:'Modülü keşfedin'},
+ mods:{
+  lite:{name:'Lite Modülü',card:'Yeşil dönüşüm yolculuğunuza hızlı bir öz değerlendirme ve hazırlık adımıyla başlayın.',row:'Hızlı öz değerlendirme ve yeşil dönüşüme hazırlık.',status:'Kullanımda',intro:'İşletmeler için farkındalık, hızlı değerlendirme ve aksiyon önceliklendirme altyapısı.',caps:['Hızlı öz değerlendirme','Hazırlık seviyesinin görünürlüğü','Farkındalık ve oryantasyon','Aksiyon önceliklendirme']},
+  finance:{name:'Sürdürülebilir Finans',card:'Yeşil kredileri, SLL KPI’larını ve portföy sürdürülebilirliğini tek akışta yönetin.',row:'Yeşil finansman, SLL ve IFI portföyleri için dijital izleme.',status:'Yakında',intro:'Yeşil finansman ve sürdürülebilirlik bağlantılı kredi (SLL) uyumunu izleyen, uluslararası finans kuruluşu (IFI) portföylerini görünür kılan dijital motor.',caps:['Yeşil finansman takibi','SLL KPI uyumu','IFI portföy panoları','Metrik doğrulama']},
+  rating:{name:'ESG Derecelendirme Teknolojisi',card:'Derecelendirme kuruluşları ve uzmanlar için güvenilir bir puanlama altyapısı.',row:'Derecelendirme kuruluşları için teknoloji ve puanlama motoru.',status:'Geliştirme aşamasında',intro:'İmplika ESG derecelendirmesi yapmaz; derecelendirme kuruluşlarına, denetçilere ve uzmanlara teknoloji motoru sağlar.',caps:['Puanlama altyapısı','Kıyaslama motoru','Uzman iş akışları','Denetlenebilir veri']},
+  supply:{name:'Tedarik Zinciri',card:'Kapsam 3 emisyonlarını, tedarikçi katılımını ve otomatik sürdürülebilirlik denetimini yönetin.',row:'Kapsam 3, tedarikçi katılımı ve sürdürülebilirlik denetimi.',status:'Kullanımda',intro:'Tedarik zincirinin her halkasında veri, risk ve aksiyon görünürlüğü sağlayın.',caps:['Kapsam 3 takibi','Tedarikçi katılımı','ESG/sürdürülebilirlik verisi toplama','Otomatik denetim']}
+ },
+ modPage:{h1:n=>`${n} ile veriyi karara dönüştürün.`,h2:'Güvenilir veri.<br>Daha iyi karar.',eb:'Çözüm',lead:'Sürdürülebilirlik performansınızı yalnızca ölçmekle kalmayın; onu iş stratejinizin, risk yönetiminizin ve finansal geleceğinizin bir parçası hâline getirin.',h3:'Nasıl çalışır?',p:'İmplika veriyi toplar, standartlaştırır, değerlendirir ve anlamlı çıktılara dönüştürür. Böylece ekipler aynı veri seti üzerinden daha hızlı ve güvenle karar alabilir.'},
+ home:{
+  eb:'Sürdürülebilirlik teknolojisi sağlayıcısı',h1:'YEŞİL DÖNÜŞÜMÜ <em>MÜMKÜN</em> KILAN TEKNOLOJİ',artTop:'YEŞİL<br><strong>DÖNÜŞÜM</strong>',
+  p:'İmplika bir sürdürülebilirlik teknolojisi sağlayıcısıdır. ESG/sürdürülebilirlik verisini ölçen, doğrulayan ve raporlanabilir hâle getiren platformumuz, bu veriyi karar süreçlerinde kullanılabilen güvenilir bir varlığa dönüştürür. Şirketler sürdürülebilirlik raporlamasını ve tedarik zincirlerini yönetir; bankalar ve finansal kurumlar ise aynı doğrulanmış veriyi kredi, risk ve yeşil finansman kararlarında kullanır.',
+  b1:'Demo Talep Edin',b2:'Modülleri Keşfedin',aud:'Kimin için:',audC:'Şirketler için',audF:'Finansal kurumlar için',
+  foot:'Teknoloji motoru + uzmanlık katmanı',core:'ESG<br>VERİSİ',flowLabel:'LITE <span>→</span> FİNANS <span>→</span> DERECELENDİRME <span>→</span> TEDARİK',scroll:'Keşfetmek için kaydırın',
+  iaasEb:'Hizmet olarak İmplika',iaasH:'SaaS ve API odaklı hizmet modeli.',iaasP:'İmplika, modüler teknoloji motorunu SaaS ve API üzerinden sunar. Alanında önde gelen uzmanlar ve Danışma Kurulu ise platformun uzmanlık katmanını oluşturur.',pills:['SaaS Platformu','API Entegrasyonu','Modüler Mimari','Uzmanlık Katmanı'],
+  flowEb:'İmplika yaklaşımı',flowH:'Veri, kararın başlangıç noktasıdır.',flowP:'Sürdürülebilirlik verisini raporlama, risk yönetimi, tedarik zinciri ve finansla aynı akışta buluşturuyoruz.',steps:['Toplama','Yapılandırma','Değerlendirme','Raporlama','Finansmana Bağlama'],
+  audEb:'Kimler için?',audH:'Aynı veri. Farklı kararlar.',
+  cC:{h:'Şirketler',p:'Kurumsal şirketler, KOBİ’ler, ihracatçılar ve sürdürülebilirlik ekipleri için veri, raporlama ve dönüşüm altyapısı.',l:['Kurumsal şirketler','KOBİ’ler','İhracatçılar','Uyum ekipleri']},
+  cF:{h:'Finansal Kurumlar',p:'Bankalar ve finansal kurumlar için sürdürülebilirlik verisini kredi, risk ve finansman süreçlerine bağlayan altyapı.',l:['Bankalar','Finansal kurumlar','Kredi birimleri','Risk birimleri']},
+  more:'Daha fazla bilgi',prodEb:'Modül ekosistemi',prodH:'İhtiyacınıza göre ölçeklenen altyapı.'
+ },
+ modulesPage:{title:'Modüller',eb:'Modüller',h1:'Sürdürülebilirlik verisini değer zincirine bağlayın.',p:'Modüler teknoloji motoruyla veriden finansal karara uzanan bütünleşik yapı.'},
+ companies:{title:'Şirketler İçin',eb:'Şirketler için',h1:'Sürdürülebilirliği işinizin verisiyle yönetin.',p:'Kurumsal şirketler, KOBİ’ler ve ihracatçılar için veri, raporlama, ESG değerlendirmesi ve tedarik zinciri görünürlüğü.',h2:'Dağınık veriyi rekabet avantajına dönüştürün.',lead:'İmplika, ekiplerin aynı sürdürülebilirlik verisi üzerinden çalışmasını sağlar; raporlama, uyum ve dönüşüm süreçlerini tek akışta yönetir.',list:['Sürdürülebilirlik verisini toplayın','Raporlama girdilerini düzenleyin','ESG performansını değerlendirin','Tedarik zinciri risklerini görün','Sürdürülebilir finansmana hazırlanın'],btn:'Nasıl çalıştığını görün'},
+ institutions:{title:'Finansal Kurumlar',eb:'Finansal kurumlar için',h1:'Finansal kararları sürdürülebilirlik içgörüleriyle güçlendirin.',p:'Bankalar ve finansal kurumlar için sürdürülebilirlik verisini kredi, risk ve sürdürülebilir finansman süreçlerine bağlayan dijital altyapı.',h2:'Sürdürülebilir finansmanı daha ölçülebilir hâle getirin.',lead:'İmplika, sürdürülebilirlik performansını finansal karar süreçlerine bağlamak için gereken görünürlüğü ve yapılandırılmış veriyi sağlar.',list:['Sürdürülebilirlik verisi analizi','ESG ile çevresel ve sosyal risk değerlendirmesi','Yeşil finansman uygunluğu','Kredi kararlarına destek','API ile bankacılık sistemlerine entegrasyon'],btn:'Nasıl çalıştığını görün'},
+ about:{title:'Hakkımızda',eb:'İmplika hakkında',h1:'Veri, uzmanlık ve finans arasında köprü kuruyoruz.',p:'İmplika, ESG/sürdürülebilirlik verisini daha ölçülebilir, doğrulanabilir ve kullanılabilir hâle getiren bir sürdürülebilirlik teknolojisi sağlayıcısıdır.',
+  s1eb:'İmplika kimdir?',s1h:'Sürdürülebilirlik verisini tek bir dijital altyapıda birleştiriyoruz.',s1p:['İmplika, sürdürülebilirlik verisinin toplanmasını, yapılandırılmasını, değerlendirilmesini ve raporlanmasını tek bir dijital altyapıda birleştiren bir teknoloji platformudur. Şirketlerin sürdürülebilirlik ihtiyaçlarını yönetmesine, finansal kurumların ise bu verileri kredi ve finansman kararlarında kullanmasına olanak tanır.'],
+  s2eb:'Çıkış noktamız',s2h:'Sürdürülebilirlik verisi neden dağınık kalsın?',s2p:['İmplika, sahadaki somut ihtiyaçlardan doğdu: sürdürülebilirlik verilerinin farklı dosya ve sistemlere dağılmış olması, raporlama ve uyum süreçlerinin giderek karmaşıklaşması, tedarik zincirlerinde veri görünürlüğünün yetersiz kalması ve bu verilerin finansal kararlara yeterince entegre edilememesi.','Amacımız, sürdürülebilirlik verisini yalnızca raporlanan bir bilgi olmaktan çıkarıp ölçülebilir, değerlendirilebilir ve finansal kararlarda kullanılabilir bir dijital varlığa dönüştürmektir.'],
+  exEb:'Uzmanlık ekosistemi',exH:'Dört bakış açısı.<br>Tek dijital altyapı.',ex:[['Teknoloji','Dijital platform, veri altyapısı, yazılım ve entegrasyon.'],['Sürdürülebilirlik ve ESG','ESG değerlendirmesi, raporlama ve veri yönetimi.'],['Saha ve Tedarik Zinciri','Veri toplama, tedarikçi değerlendirmesi ve operasyonel dönüşüm.'],['Regülasyon ve Finans','ESG, TSRS, iklim ile çevresel ve sosyal riskler, sürdürülebilir finansman.']],
+  ecoEb:'Ekosistemdeki roller',ecoH:'Farklı uzmanlıklar,<br>aynı hedef.',ecoP:'İmplika; teknolojiyi, sürdürülebilirlik uzmanlığını, saha deneyimini ve finansal karar alma süreçlerini aynı ekosistemde buluşturur.',
+  eco:[['Teknoloji ve Platform','Dijital platform ve sürdürülebilirlik veri altyapısı.'],['Teknoloji Geliştirme','Yazılım geliştirme, teknik altyapı, kalite güvence (QA) ve DevOps.'],['Uygulama Ortağı','Saha uygulamaları, operasyonel ve tedarik zinciri dönüşümü.'],['Teknoloji ve Regülasyon Uygulama Ortağı','Dijital dönüşüm ve regülasyon uygulamaları.']],
+  closeEb:'Vizyonumuz',closeH:'Sürdürülebilirlik verisinden finansal değere.',closeP:'İmplika; veri, risk, operasyon ve finans arasında bağlantı kuran dijital altyapı olarak konumlanır.'},
+ board:{title:'Yönetim Kurulu',eb:'Yönetim Kurulu',h:'Uzun vadeli gelişim için stratejik yön.',p:'İmplika’nın stratejik yönünü ve uzun vadeli gelişimini şekillendiren Yönetim Kurulu.',role:'Yönetim Kurulu Üyesi'},
+ insights:{title:'İçgörüler',eb:'İçgörüler',h1:'Sürdürülebilirlikte bir sonraki adımı düşünün.',p:'Uzman videoları, makaleler ve regülasyon rehberleri.',vEb:'Uzman videoları',vH:'Alan uzmanları regülasyonları ve modülleri anlatıyor.',
+  videos:[['CSRD','CSRD Uyumuna Hazırlık','Sürdürülebilirlik Uzmanı'],['TSRS','TSRS Çerçevesi ve Veri Gereksinimleri','Raporlama Uzmanı'],['SKDM / CBAM','Sınırda Karbon Düzenleme Mekanizması (SKDM)','İklim Uzmanı'],['Yeşil Finans','Yeşil Finansman ve SLL Uygulamaları','Finans Uzmanı']],
+  aEb:'Makaleler',aH:'Bilgi bankası',articles:[['ESG','ESG Veri Yönetişimi: Temel İlkeler','Eylül 2026'],['Tedarik Zinciri','Kapsam 3: Nereden Başlamalı?','Ağustos 2026'],['Finans','Sürdürülebilirlik Bağlantılı Krediler','Ağustos 2026']]},
+ contact:{title:'İletişim',eb:'İletişim',h1:'Bir sonraki adımı birlikte tasarlayalım.',p:'İhtiyacınızı anlatın; İmplika’nın sürdürülebilirlik teknolojisinin size nasıl katkı sağlayabileceğini birlikte konuşalım.',asideEb:'Bizimle iletişime geçin',h2:'Verinizden değere giden yolu konuşalım.',asideP:'Formu doldurun ya da doğrudan e-posta gönderin. Ekibimiz, ihtiyacınızı anlamak ve doğru başlangıç noktasını birlikte belirlemek için sizinle iletişime geçecektir.',mailLabel:'E-posta',note:'Bilgileriniz yalnızca iletişim talebinizi değerlendirmek amacıyla kullanılacaktır.',
+  f:{first:'Ad',last:'Soyad',company:'Şirket',email:'E-posta',phone:'Telefon',type:'Şirket türü',types:['Kurumsal şirket','KOBİ','Finansal kurum','Tedarikçi','Diğer'],interest:'İlgi alanı',interests:['Lite Modülü','Sürdürülebilir Finans','ESG Derecelendirme Teknolojisi','Tedarik Zinciri','İş birliği','Diğer'],message:'Mesajınız',select:'Seçin',submit:'Mesajı Hazırla',small:`Mesajınız ${EMAIL} adresine gönderilmek üzere hazırlanır; e-posta uygulamanızda açabilir ya da metni kopyalayabilirsiniz.`},
+  subj:c=>`İletişim talebi – ${c}`},
+ demo:{eb:'İmplika Demo',h2:'Modülünüzü seçin, demo talep edin.',name:'Ad Soyad',company:'Şirket',email:'E-posta',module:'İlgilendiğiniz modül',submit:'Demo Talep Edin',close:'Kapat',subj:(m,c)=>`Demo talebi – ${m} – ${c}`},
+ sent:{h:'Mesajınız hazır',p:`Talebinizi göndermek için e-posta uygulamanızda açın ya da aşağıdaki metni kopyalayıp <strong>${EMAIL}</strong> adresine iletin.`,open:'E-postada Aç',copy:'Metni Kopyala',to:'Kime',subject:'Konu'},
+ copy:{copy:'Kopyala',done:'Kopyalandı',sel:'Seçildi, kopyalayın'},
+ footer:{p:'Sürdürülebilirlik verisini raporlamaya, karar alma süreçlerine ve finansal değere dönüştüren teknoloji altyapısı.',c1:'Keşfedin',c2:'Odak Alanları',c3:'İletişim',city:'İstanbul · Türkiye',copy:'© 2026 İmplika. Tüm hakları saklıdır.',legal:'Gizlilik · Kullanım Koşulları',li:'İmplika LinkedIn sayfası'}
+},
+en:{
+ brand:'Implika',
+ meta:{title:'Implika — Turn Sustainability Data into Value',desc:'Implika is a sustainability technology provider that measures and validates ESG and sustainability data and makes it ready for reporting, supply chain management and financial decisions.'},
+ nav:{modules:'Modules',allModules:'All Modules',companies:'For Companies',institutions:'Financial Institutions',about:'About',board:'Board of Directors',insights:'Insights',demo:'Request a Demo',menu:'Open menu',home:'Implika home',lang:'Language',mainNav:'Main navigation'},
+ cta:{eb:'Let’s move forward together',h2:'Where does your<br><em>sustainability data stand?</em>',btn:'Request a Demo'},
+ sol:{eb:'Core modules',h2:'Connect sustainability data to your value chain.',p:'Implika’s modular technology engine gives you one integrated path from data to financial decisions.',link:'Explore module'},
+ mods:{
+  lite:{name:'Lite Module',card:'Start your green transition with a quick self-assessment and readiness check.',row:'Quick self-assessment and green transition readiness.',status:'Available',intro:'Awareness, rapid assessment and action prioritisation for businesses.',caps:['Quick self-assessment','Readiness visibility','Awareness and onboarding','Action prioritisation']},
+  finance:{name:'Sustainable Finance',card:'Manage green loans, SLL KPIs and portfolio sustainability in a single flow.',row:'Digital tracking for green finance, SLLs and IFI portfolios.',status:'Coming soon',intro:'A digital engine that monitors green finance and sustainability-linked loan (SLL) compliance and gives visibility into international financial institution (IFI) portfolios.',caps:['Green finance tracking','SLL KPI compliance','IFI portfolio dashboards','Metric validation']},
+  rating:{name:'ESG Rating Technology',card:'A reliable scoring infrastructure for rating agencies and experts.',row:'Technology and scoring engine for rating agencies.',status:'In development',intro:'Implika does not issue ESG ratings. It provides the technology engine used by rating agencies, auditors and experts.',caps:['Scoring infrastructure','Benchmarking engine','Expert workflows','Auditable data']},
+  supply:{name:'Supply Chain',card:'Manage Scope 3 emissions, supplier onboarding and automated sustainability audits.',row:'Scope 3, supplier onboarding and sustainability audits.',status:'Available',intro:'Gain visibility into data, risks and actions across every link of your supply chain.',caps:['Scope 3 tracking','Supplier onboarding','ESG and sustainability data collection','Automated audits']}
+ },
+ modPage:{h1:n=>`Turn data into decisions with ${n}.`,h2:'Reliable data.<br>Better decisions.',eb:'Solution',lead:'Don’t just measure your sustainability performance. Make it part of your business strategy, your risk management and your financial future.',h3:'How it works',p:'Implika collects, standardises and assesses data, then turns it into meaningful outputs, so teams can make faster, more confident decisions from a single source of truth.'},
+ home:{
+  eb:'Sustainability technology provider',h1:'GOGREEN BUSINESS <em>ENABLER</em> WITH TECH',artTop:'GREEN<br><strong>BUSINESS</strong>',
+  p:'Implika is a sustainability technology provider. Our platform measures, validates and prepares ESG and sustainability data for reporting, turning it into a trusted asset for decision-making. Companies use it to manage sustainability reporting and their supply chains, while banks and financial institutions use the same validated data in credit, risk and green finance decisions.',
+  b1:'Request a Demo',b2:'Explore Modules',aud:'Built for:',audC:'Companies',audF:'Financial institutions',
+  foot:'Technology engine + expertise layer',core:'ESG<br>DATA',flowLabel:'LITE <span>→</span> FINANCE <span>→</span> RATING <span>→</span> SUPPLY',scroll:'Scroll to explore',
+  iaasEb:'Implika as a Service',iaasH:'A SaaS- and API-first delivery model.',iaasP:'Implika delivers its modular technology engine through SaaS and APIs. Leading domain experts and our Advisory Board form the platform’s expertise layer.',pills:['SaaS Platform','API Integration','Modular Architecture','Expertise Layer'],
+  flowEb:'The Implika approach',flowH:'Every decision starts with data.',flowP:'We bring sustainability data together with reporting, risk management, supply chain and finance in one continuous flow.',steps:['Collect','Structure','Assess','Report','Connect to Finance'],
+  audEb:'Who is it for?',audH:'Same data. Different decisions.',
+  cC:{h:'Companies',p:'Data, reporting and transformation infrastructure for corporates, SMEs, exporters and sustainability teams.',l:['Corporates','SMEs','Exporters','Compliance teams']},
+  cF:{h:'Financial Institutions',p:'Infrastructure that connects sustainability data to credit, risk and financing processes at banks and financial institutions.',l:['Banks','Financial institutions','Credit teams','Risk teams']},
+  more:'Learn more',prodEb:'Module ecosystem',prodH:'Infrastructure that scales with your needs.'
+ },
+ modulesPage:{title:'Modules',eb:'Modules',h1:'Connect sustainability data to your value chain.',p:'One integrated path from data to financial decisions, powered by a modular technology engine.'},
+ companies:{title:'For Companies',eb:'For companies',h1:'Run sustainability on your business data.',p:'Data, reporting, ESG assessment and supply chain visibility for corporates, SMEs and exporters.',h2:'Turn scattered data into a competitive advantage.',lead:'Implika puts every team on the same sustainability data and brings reporting, compliance and transformation into a single flow.',list:['Collect sustainability data','Organise reporting inputs','Assess ESG performance','See supply chain risks','Prepare for sustainable finance'],btn:'See how it works'},
+ institutions:{title:'Financial Institutions',eb:'For financial institutions',h1:'Strengthen financial decisions with sustainability insight.',p:'Digital infrastructure that connects sustainability data to credit, risk and sustainable finance processes at banks and financial institutions.',h2:'Make sustainable finance more measurable.',lead:'Implika provides the visibility and structured data needed to link sustainability performance to financial decision-making.',list:['Sustainability data analysis','ESG and environmental & social risk assessment','Green finance eligibility','Credit decision support','API integration with banking systems'],btn:'See how it works'},
+ about:{title:'About',eb:'About Implika',h1:'Bridging data, expertise and finance.',p:'Implika is a sustainability technology provider that makes ESG and sustainability data more measurable, verifiable and usable.',
+  s1eb:'Who we are',s1h:'Bringing sustainability data into one digital infrastructure.',s1p:['Implika is a technology platform that brings the collection, structuring, assessment and reporting of sustainability data into a single digital infrastructure. It helps companies manage their sustainability needs and enables financial institutions to use this data in credit and financing decisions.'],
+  s2eb:'Where we started',s2h:'Why should sustainability data stay scattered?',s2p:['Implika grew out of real needs in the field: sustainability data spread across files and systems, reporting and compliance processes growing more complex, limited data visibility in supply chains, and sustainability data that rarely made it into financial decisions.','Our goal is to turn sustainability data from something that is simply reported into a measurable, assessable digital asset that can be used in financial decisions.'],
+  exEb:'Expertise ecosystem',exH:'Four perspectives.<br>One digital infrastructure.',ex:[['Technology','Digital platform, data infrastructure, software and integration.'],['Sustainability & ESG','ESG assessment, reporting and data management.'],['Field & Supply Chain','Data collection, supplier assessment and operational transformation.'],['Regulation & Finance','ESG, TSRS, climate and E&S risks, and sustainable finance.']],
+  ecoEb:'Roles in the ecosystem',ecoH:'Different expertise,<br>one goal.',ecoP:'Implika brings technology, sustainability expertise, field experience and financial decision-making together in one ecosystem.',
+  eco:[['Technology & Platform','Digital platform and sustainability data infrastructure.'],['Technology Development','Software development, technical infrastructure, QA and DevOps.'],['Implementation Partner','Field implementation, operational and supply chain transformation.'],['Technology & Regulatory Implementation Partner','Digital transformation and regulatory implementation.']],
+  closeEb:'Our vision',closeH:'From sustainability data to financial value.',closeP:'Implika is the digital infrastructure that connects data, risk, operations and finance.'},
+ board:{title:'Board of Directors',eb:'Board of Directors',h:'Strategic direction for long-term growth.',p:'The Board of Directors shaping Implika’s strategic direction and long-term growth.',role:'Board Member'},
+ insights:{title:'Insights',eb:'Insights',h1:'Think ahead on sustainability.',p:'Expert videos, articles and regulatory guides.',vEb:'Expert videos',vH:'Domain experts explain the regulations and the modules.',
+  videos:[['CSRD','Getting Ready for CSRD','Sustainability Expert'],['TSRS','The TSRS Framework and Its Data Requirements','Reporting Expert'],['CBAM','The Carbon Border Adjustment Mechanism (CBAM)','Climate Expert'],['Green Finance','Green Finance and SLLs in Practice','Finance Expert']],
+  aEb:'Articles',aH:'Knowledge base',articles:[['ESG','ESG Data Governance: Core Principles','September 2026'],['Supply Chain','Scope 3: Where to Start?','August 2026'],['Finance','Sustainability-Linked Loans','August 2026']]},
+ contact:{title:'Contact',eb:'Contact',h1:'Let’s shape the next step together.',p:'Tell us what you need, and let’s discuss how Implika’s sustainability technology can support you.',asideEb:'Get in touch',h2:'Let’s talk about turning your data into value.',asideP:'Fill in the form or email us directly. Our team will get back to you to understand your needs and find the right starting point together.',mailLabel:'Email',note:'Your information will only be used to respond to your enquiry.',
+  f:{first:'First name',last:'Last name',company:'Company',email:'Email',phone:'Phone',type:'Company type',types:['Corporate','SME','Financial institution','Supplier','Other'],interest:'Area of interest',interests:['Lite Module','Sustainable Finance','ESG Rating Technology','Supply Chain','Partnership','Other'],message:'Your message',select:'Select',submit:'Prepare Message',small:`Your message will be prepared for ${EMAIL}. You can open it in your email app or copy the text.`},
+  subj:c=>`Enquiry – ${c}`},
+ demo:{eb:'Implika Demo',h2:'Choose a module and request a demo.',name:'Full name',company:'Company',email:'Email',module:'Module of interest',submit:'Request a Demo',close:'Close',subj:(m,c)=>`Demo request – ${m} – ${c}`},
+ sent:{h:'Your message is ready',p:`To send your enquiry, open it in your email app or copy the text below and send it to <strong>${EMAIL}</strong>.`,open:'Open in Email',copy:'Copy Text',to:'To',subject:'Subject'},
+ copy:{copy:'Copy',done:'Copied',sel:'Selected, copy it'},
+ footer:{p:'Technology infrastructure that turns sustainability data into reporting, decisions and financial value.',c1:'Explore',c2:'Focus Areas',c3:'Contact',city:'Istanbul · Türkiye',copy:'© 2026 Implika. All rights reserved.',legal:'Privacy · Terms of Use',li:'Implika on LinkedIn'}
+}};
+
+const MOD_META=[{id:'lite',n:'01',icon:'sparkles',av:true},{id:'finance',n:'02',icon:'circle-dollar-sign',av:false},{id:'rating',n:'03',icon:'target',av:false},{id:'supply',n:'04',icon:'network',av:true}];
+const BOARD=[['İU','İhsan Uğur Delikanlı'],['YB','Yasin Beceni'],['ZY','Zafer Yıldız']];
+const ECO=[{mark:null,name:null},{mark:'ND',name:'NTT DATA'},{mark:'SG',name:'Sistem Global'},{mark:'BD',name:'BTS Dijital'}];
+
+/* ---------------- State ---------------- */
+let lang='tr';
+try{const s=localStorage.getItem('implika-lang');if(s==='en'||s==='tr')lang=s}catch(_){}
+const T=()=>L[lang];
+
+/* ---------------- Builders ---------------- */
+const eb=t=>`<div class="eyebrow"><span></span>${t}</div>`;
+const cta=()=>{const c=T().cta;return `<section class="cta-band"><div class="container cta-inner"><div>${eb(c.eb)}<h2>${c.h2}</h2></div><a class="button" href="#contact">${c.btn}<i data-i="arrow-right" s="16"></i></a></div></section>`};
+const solutionsGrid=(cls='')=>{const t=T();return `<section class="solutions-section ${cls}"><div class="container"><div class="section-heading split"><div>${eb(t.sol.eb)}<h2>${t.sol.h2}</h2></div><p>${t.sol.p}</p></div><div class="solution-grid">${MOD_META.map(m=>{const d=t.mods[m.id];return `<a class="solution-card" href="#${m.id}"><div class="card-top"><span>${m.n}</span><i data-i="${m.icon}" s="20"></i></div><h3>${d.name}</h3><p>${d.card}</p><div class="card-link">${t.sol.link} <i data-i="arrow-up-right" s="16"></i></div></a>`}).join('')}</div></div></section>`};
+const boardGrid=()=>`<div class="board-grid">${BOARD.map((b,i)=>`<div class="board-card"><div class="portrait"><span>${b[0]}</span><div class="portrait-grid"></div></div><span class="board-index">0${i+1}</span><h2>${b[1]}</h2><p>${T().board.role}</p></div>`).join('')}</div>`;
+const intro=(o,accent)=>`<section class="page-intro${accent?' accent-intro':''}"><div class="container">${eb(o.eb)}<h1>${o.h1||o.h}</h1><p>${o.p}</p></div></section>`;
+const audienceDetail=(o,icon)=>`${intro(o,true)}<section class="audience-detail"><div class="container audience-detail-grid"><div><div class="feature-icon"><i data-i="${icon}" s="25"></i></div><h2>${o.h2}</h2></div><div><p class="lead">${o.lead}</p><ul class="check-list">${o.list.map(l=>`<li><span><i data-i="check" s="14"></i></span>${l}</li>`).join('')}</ul><a class="button" href="#contact">${o.btn}<i data-i="arrow-right" s="16"></i></a></div></div></section>${solutionsGrid('compact')}${cta()}`;
+
+const PAGES={
+home:()=>{const t=T(),h=t.home;return {title:t.meta.title,html:`
+<section class="hero"><div class="container hero-grid"><div class="hero-copy">${eb(h.eb)}<h1>${h.h1}</h1><p>${h.p}</p>
+<div class="hero-actions"><a class="button" href="#contact">${h.b1}<i data-i="arrow-right" s="16"></i></a><a class="text-link" href="#modules">${h.b2}<i data-i="arrow-up-right" s="16"></i></a></div>
+<div class="hero-audience"><span>${h.aud}</span><a href="#companies">${h.audC}<i data-i="arrow-right" s="13"></i></a><a href="#institutions">${h.audF}<i data-i="arrow-right" s="13"></i></a></div>
+<div class="hero-footnote"><i data-i="sparkles" s="15"></i>${h.foot}</div></div>
+<div class="hero-art"><div class="art-label label-top">${h.artTop}</div><div class="data-visual" aria-hidden="true"><div class="visual-orbit orbit-one"></div><div class="visual-orbit orbit-two"></div><div class="visual-core"><i data-i="database" s="24"></i><span>${h.core}</span></div><div class="visual-node node-one"><i data-i="chart-column" s="17"></i></div><div class="visual-node node-two"><i data-i="shield-check" s="17"></i></div><div class="visual-node node-three"><i data-i="circle-dollar-sign" s="17"></i></div><div class="visual-line line-one"></div><div class="visual-line line-two"></div><div class="visual-line line-three"></div><div class="visual-grid"></div></div><div class="art-label label-bottom">${h.flowLabel}</div></div></div>
+<div class="hero-scroll"><span>01</span><div></div><span>${h.scroll}</span></div></section>
+<section class="iaas-section"><div class="container iaas-grid"><div>${eb(h.iaasEb)}<h2>${h.iaasH}</h2></div><div class="iaas-body"><p>${h.iaasP}</p><div class="iaas-pills">${h.pills.map(p=>`<span>${p}</span>`).join('')}</div></div></div></section>
+<section class="flow-section"><div class="container"><div class="section-heading centered">${eb(h.flowEb)}<h2>${h.flowH}</h2><p>${h.flowP}</p></div>
+<div class="flow-line">${h.steps.map((s,i,a)=>`<div class="flow-step"><span>0${i+1}</span><strong>${s}</strong>${i<a.length-1?'<i data-i="arrow-right" s="17"></i>':''}</div>`).join('')}</div></div></section>
+${solutionsGrid()}
+<section class="audience-section"><div class="container"><div class="section-heading centered">${eb(h.audEb)}<h2>${h.audH}</h2></div><div class="audience-grid">
+${[[h.cC,'earth','#companies'],[h.cF,'circle-dollar-sign','#institutions']].map(([c,ic,href])=>`<div class="audience-card"><div class="audience-icon"><i data-i="${ic}" s="22"></i></div><h3>${c.h}</h3><p>${c.p}</p><ul>${c.l.map(x=>`<li><i data-i="check" s="14"></i>${x}</li>`).join('')}</ul><a class="text-link" href="${href}">${h.more}<i data-i="arrow-up-right" s="16"></i></a></div>`).join('')}
+</div></div></section>
+<section class="products-section"><div class="container"><div class="section-heading split"><div>${eb(h.prodEb)}<h2>${h.prodH}</h2></div></div><div class="product-list">${MOD_META.map(m=>{const d=t.mods[m.id];return `<a class="product-row" href="#${m.id}"><span class="product-index">${m.n}</span><span class="product-name">${d.name}</span><span class="product-description">${d.row}</span><span class="status${m.av?' available':''}">${d.status}</span><i data-i="arrow-up-right" s="19"></i></a>`}).join('')}</div></div></section>
+${cta()}`}},
+modules:()=>{const t=T();return {title:t.modulesPage.title,html:intro(t.modulesPage)+solutionsGrid()+cta()}},
+companies:()=>{const t=T();return {title:t.companies.title,html:audienceDetail(t.companies,'network')}},
+institutions:()=>{const t=T();return {title:t.institutions.title,html:audienceDetail(t.institutions,'circle-dollar-sign')}},
+about:()=>{const t=T(),a=t.about,b=t.board;return {title:a.title,html:`${intro(a)}
+<section class="about-story"><div class="container story-grid"><div class="story-aside"><span class="large-number">01</span>${eb(a.s1eb)}</div><div class="story-copy"><h2>${a.s1h}</h2>${a.s1p.map(p=>`<p>${p}</p>`).join('')}</div></div></section>
+<section class="about-story alt"><div class="container story-grid"><div class="story-aside"><span class="large-number">02</span>${eb(a.s2eb)}</div><div class="story-copy"><h2>${a.s2h}</h2>${a.s2p.map(p=>`<p>${p}</p>`).join('')}</div></div></section>
+<section class="expertise-section"><div class="container"><div class="section-heading centered">${eb(a.exEb)}<h2>${a.exH}</h2></div><div class="expertise-grid">${a.ex.map((e,i)=>`<div class="expertise-item"><span>0${i+1}</span><div class="expertise-icon"><i data-i="${['database','chart-column','network','shield-check'][i]}" s="20"></i></div><h3>${e[0]}</h3><p>${e[1]}</p></div>`).join('')}</div></div></section>
+<section class="ecosystem-section"><div class="container"><div class="section-heading split"><div>${eb(a.ecoEb)}<h2>${a.ecoH}</h2></div><p>${a.ecoP}</p></div><div class="ecosystem-grid">${ECO.map((e,i)=>`<div class="ecosystem-card"><div class="ecosystem-brand">${e.mark||`<span class="mini-brand">${t.brand[0]}</span>`}</div><h3>${e.name||t.brand}</h3><strong>${a.eco[i][0]}</strong><p>${a.eco[i][1]}</p></div>`).join('')}</div></div></section>
+<section class="about-closing"><div class="container">${eb(a.closeEb)}<h2>${a.closeH}</h2><p>${a.closeP}</p></div></section>
+<section class="board-section about-board"><div class="container"><div class="section-heading centered">${eb(b.eb)}<h2>${b.h}</h2><p>${b.p}</p></div>${boardGrid()}</div></section>`}},
+board:()=>{const b=T().board;return {title:b.title,html:intro(b)+`<section class="board-section"><div class="container">${boardGrid()}</div></section>`}},
+insights:()=>{const s=T().insights;return {title:s.title,html:`${intro(s)}
+<section class="insights-videos"><div class="container"><div class="section-heading split"><div>${eb(s.vEb)}<h2>${s.vH}</h2></div></div><div class="video-grid">${s.videos.map(v=>`<div class="video-card"><div class="video-thumb"><div class="play-btn"><i data-i="play" s="22"></i></div><span class="video-topic">${v[0]}</span></div><div class="video-meta"><strong>${v[1]}</strong><span>${v[2]}</span></div></div>`).join('')}</div></div></section>
+<section class="insights-articles"><div class="container"><div class="section-heading split"><div>${eb(s.aEb)}<h2>${s.aH}</h2></div></div><div class="article-list">${s.articles.map(a=>`<div class="article-row"><span class="article-tag">${a[0]}</span><strong>${a[1]}</strong><span class="article-date">${a[2]}</span><i data-i="arrow-up-right" s="18"></i></div>`).join('')}</div></div></section>${cta()}`}},
+contact:()=>{const t=T(),c=t.contact,f=c.f;const opts=a=>`<option value="">${f.select}</option>`+a.map(o=>`<option>${o}</option>`).join('');return {title:c.title,html:`${intro(c,true)}
+<section class="contact-section"><div class="container contact-grid"><div class="contact-aside">${eb(c.asideEb)}<h2>${c.h2}</h2><p>${c.asideP}</p>
+<div class="contact-mail"><small>${c.mailLabel}</small><div class="mail-line"><a href="mailto:${EMAIL}">${EMAIL}</a><button class="copy-btn" type="button" data-copy="${EMAIL}"><i data-i="copy" s="12"></i>${t.copy.copy}</button></div></div>
+<div class="contact-note"><i data-i="shield-check" s="17"></i><span>${c.note}</span></div></div>
+<div data-form-wrap><form class="form" data-form="contact" novalidate>
+<div class="form-row"><label for="c-name">${f.first}<input id="c-name" name="${f.first}" required autocomplete="given-name"></label><label for="c-surname">${f.last}<input id="c-surname" name="${f.last}" required autocomplete="family-name"></label></div>
+<div class="form-row"><label for="c-company">${f.company}<input id="c-company" name="${f.company}" data-role="company" required autocomplete="organization"></label><label for="c-email">${f.email}<input id="c-email" name="${f.email}" type="email" required autocomplete="email"></label></div>
+<div class="form-row"><label for="c-phone">${f.phone}<input id="c-phone" name="${f.phone}" type="tel" autocomplete="tel"></label><label for="c-type">${f.type}<select id="c-type" name="${f.type}" required>${opts(f.types)}</select></label></div>
+<label for="c-interest">${f.interest}<select id="c-interest" name="${f.interest}" required>${opts(f.interests)}</select></label>
+<label for="c-message">${f.message}<textarea id="c-message" name="${f.message}" data-role="message" required rows="5"></textarea></label>
+<button class="button" type="submit">${f.submit} <i data-i="arrow-right" s="16"></i></button>
+<small>${f.small}</small>
+</form></div></div></section>`}}
+};
+MOD_META.forEach(m=>{PAGES[m.id]=()=>{const t=T(),d=t.mods[m.id],p=t.modPage;return {title:d.name,html:`${intro({eb:d.name,h1:p.h1(d.name),p:d.intro},true)}
+<section class="detail-section"><div class="container detail-grid"><div class="detail-sticky"><div class="feature-icon"><i data-i="${m.icon}" s="25"></i></div><span class="large-number">${m.n}</span><h2>${p.h2}</h2></div><div class="detail-content"><div class="content-block">${eb(p.eb)}<p class="lead">${p.lead}</p></div><div class="capability-grid">${d.caps.map((c,i)=>`<div class="capability"><span>0${i+1}</span><strong>${c}</strong></div>`).join('')}</div><div class="content-block"><h3>${p.h3}</h3><p>${p.p}</p></div></div></div></section>${cta()}`}}});
+
+/* ---------------- Chrome ---------------- */
+function renderChrome(){
+ const t=T(),n=t.nav,fo=t.footer,d=t.demo;
+ document.getElementById('header-inner').innerHTML=`
+ <a class="logo" href="#home" aria-label="${n.home}"><img src="${LOGO}" alt="${t.brand} — powered by BTS Dijital" class="logo-img" width="120" height="40"></a>
+ <nav class="main-nav" id="main-nav" aria-label="${n.mainNav}">
+  <div class="nav-item"><button type="button" aria-expanded="false">${n.modules} <i data-i="chevron-down" s="14"></i></button>
+   <div class="dropdown"><a class="dropdown-parent" href="#modules">${n.allModules}</a>${MOD_META.map(m=>`<a href="#${m.id}">${t.mods[m.id].name}</a>`).join('')}</div></div>
+  <div class="nav-item"><a href="#companies">${n.companies}</a></div>
+  <div class="nav-item"><a href="#institutions">${n.institutions}</a></div>
+  <div class="nav-item"><button type="button" aria-expanded="false">${n.about} <i data-i="chevron-down" s="14"></i></button>
+   <div class="dropdown"><a class="dropdown-parent" href="#about">${n.about}</a><a href="#board">${n.board}</a></div></div>
+  <div class="nav-item"><a href="#insights">${n.insights}</a></div>
+ </nav>
+ <div class="nav-actions">
+  <div class="language-switch" role="group" aria-label="${n.lang}"><button type="button" data-lang="tr" aria-pressed="${lang==='tr'}">TR</button><span>/</span><button type="button" data-lang="en" aria-pressed="${lang==='en'}">EN</button></div>
+  <button class="button button-small" type="button" data-demo>${n.demo} <i data-i="arrow-up-right" s="16"></i></button>
+  <button class="menu-button" type="button" aria-label="${n.menu}" aria-controls="main-nav" aria-expanded="false"><i data-i="menu" s="24"></i></button>
+ </div>`;
+ document.getElementById('footer-inner').innerHTML=`
+ <div class="footer-top">
+  <div><a class="logo" href="#home" aria-label="${n.home}"><img src="${LOGO}" alt="${t.brand} — powered by BTS Dijital" class="logo-img" width="120" height="40"></a><p>${fo.p}</p></div>
+  <div class="footer-columns">
+   <div><strong>${fo.c1}</strong><a href="#modules">${n.modules}</a><a href="#about">${n.about}</a><a href="#insights">${n.insights}</a></div>
+   <div><strong>${fo.c2}</strong><a href="#companies">${n.companies}</a><a href="#institutions">${n.institutions}</a><a href="#board">${n.board}</a></div>
+   <div><strong>${fo.c3}</strong><a href="#contact">${n.demo}</a><span>${fo.city}</span><a href="mailto:${EMAIL}">${EMAIL}</a></div>
+  </div>
+ </div>
+ <div class="footer-bottom"><span>${fo.copy}</span><div class="socials"><a aria-label="${fo.li}" href="${LINKEDIN}" target="_blank" rel="noopener noreferrer"><i data-i="linkedin" s="16"></i></a></div><span>${fo.legal}</span></div>`;
+ demoInner.innerHTML=`<button class="demo-close" type="button" aria-label="${d.close}" data-close><i data-i="x" s="20"></i></button>
+ <div class="demo-header">${eb(d.eb)}<h2 id="demo-title">${d.h2}</h2></div>
+ <div data-form-wrap><form class="form" data-form="demo" novalidate>
+  <div class="form-row"><label for="d-name">${d.name}<input id="d-name" name="${d.name}" required autocomplete="name"></label><label for="d-company">${d.company}<input id="d-company" name="${d.company}" data-role="company" required autocomplete="organization"></label></div>
+  <label for="d-email">${d.email}<input id="d-email" name="${d.email}" type="email" required autocomplete="email"></label>
+  <label for="d-module">${d.module}<select id="d-module" name="${d.module}" data-role="module" required><option value="">${t.contact.f.select}</option>${MOD_META.map(m=>`<option>${t.mods[m.id].name}</option>`).join('')}</select></label>
+  <button class="button" type="submit">${d.submit} <i data-i="arrow-right" s="16"></i></button>
+ </form></div>`;
+ hydrate(document.getElementById('header-inner'));hydrate(document.getElementById('footer-inner'));hydrate(demoInner);
+ document.documentElement.lang=lang;
+ const md=document.querySelector('meta[name="description"]');if(md)md.content=t.meta.desc;
+}
+
+const app=document.getElementById('app');
+const demo=document.getElementById('demo');
+const demoInner=document.getElementById('demo-inner');
+let currentKey='home';
+function closeMenus(){document.querySelectorAll('.nav-item.open').forEach(n=>{n.classList.remove('open');n.querySelector('button')?.setAttribute('aria-expanded','false')})}
+function render(keepScroll){
+ const key=(location.hash||'').replace(/^#\/?/,'')||'home';
+ currentKey=PAGES[key]?key:'home';
+ const page=PAGES[currentKey]();
+ app.innerHTML=page.html;hydrate(app);
+ document.title=currentKey==='home'?page.title:`${page.title} — ${T().brand}`;
+ document.querySelectorAll('.nav-item>a').forEach(a=>a.classList.toggle('current',a.getAttribute('href')==='#'+currentKey));
+ closeMenus();const nav=document.getElementById('main-nav');nav&&nav.classList.remove('open');
+ if(!keepScroll)window.scrollTo(0,0);
+}
+function setLang(l){if(l===lang)return;lang=l;try{localStorage.setItem('implika-lang',l)}catch(_){}const wasOpen=!demo.hidden;renderChrome();render(true);if(wasOpen)openDemo()}
+window.addEventListener('hashchange',()=>render(false));
+
+document.addEventListener('click',e=>{
+ const lb=e.target.closest('[data-lang]');if(lb){setLang(lb.dataset.lang);return}
+ const nb=e.target.closest('.nav-item>button');
+ if(nb){e.stopPropagation();const item=nb.parentElement;const was=item.classList.contains('open');closeMenus();if(!was){item.classList.add('open');nb.setAttribute('aria-expanded','true')}return}
+ if(!e.target.closest('.nav-item'))closeMenus();
+ const mb=e.target.closest('.menu-button');if(mb){const nav=document.getElementById('main-nav');const o=nav.classList.toggle('open');mb.setAttribute('aria-expanded',String(o));return}
+ if(e.target.closest('[data-demo]')){openDemo();return}
+ if(e.target===demo||e.target.closest('[data-close]')){closeDemo();return}
+ const cb=e.target.closest('[data-copy]');if(cb)copyText(cb.dataset.copy,cb);
+});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeDemo();closeMenus()}});
+function openDemo(){renderDemoForm();demo.hidden=false;demo.querySelector('input')?.focus()}
+function renderDemoForm(){if(!demoInner.querySelector('form')){renderChrome()}}
+function closeDemo(){demo.hidden=true}
+
+async function copyText(text,btn){
+ const label=btn.innerHTML,c=T().copy;
+ try{await navigator.clipboard.writeText(text);btn.textContent=c.done}
+ catch(_){const tgt=btn.closest('.sent')?.querySelector('pre')||btn.closest('.mail-line')?.querySelector('a');if(tgt){const r=document.createRange();r.selectNodeContents(tgt);const s=getSelection();s.removeAllRanges();s.addRange(r)}btn.textContent=c.sel}
+ setTimeout(()=>{btn.innerHTML=label},2200);
+}
+
+document.addEventListener('submit',e=>{
+ const f=e.target.closest('form[data-form]');if(!f)return;
+ e.preventDefault();
+ if(!f.checkValidity()){f.reportValidity();return}
+ const t=T(),isDemo=f.dataset.form==='demo';
+ const company=f.querySelector('[data-role="company"]').value.trim();
+ const subject=isDemo?t.demo.subj(f.querySelector('[data-role="module"]').value,company):t.contact.subj(company);
+ const msgEl=f.querySelector('[data-role="message"]');
+ const lines=[...f.querySelectorAll('input,select')].filter(el=>el.value.trim()).map(el=>`${el.name}: ${el.value.trim()}`);
+ if(msgEl)lines.push('',msgEl.value.trim());
+ const body=lines.join('\n');
+ const full=`${t.sent.to}: ${EMAIL}\n${t.sent.subject}: ${subject}\n\n${body}`;
+ const mailto=`mailto:${EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+ const wrap=f.closest('[data-form-wrap]');
+ wrap.innerHTML=`<div class="sent"><h3><i data-i="circle-check" s="22"></i>${t.sent.h}</h3><p>${t.sent.p}</p><pre></pre><div class="actions"><a class="button" href="${mailto}" target="_blank" rel="noopener">${t.sent.open} <i data-i="mail" s="16"></i></a><button class="button ghost" type="button" data-copy="">${t.sent.copy} <i data-i="copy" s="16"></i></button></div></div>`;
+ wrap.querySelector('pre').textContent=full;
+ wrap.querySelector('[data-copy]').dataset.copy=full;
+ hydrate(wrap);
+});
+
+renderChrome();
+render(false);
+</script>
+
+</body>
+</html>
