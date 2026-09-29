@@ -781,6 +781,7 @@ a.hero-badge:hover{border-color:#b0d28d}
 
 <script>
 const ICONS={
+"youtube":'<path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"/><path d="m10 15 5-3-5-3z"/>',
 "arrow-left":'<path d="m12 19-7-7 7-7"/><path d="M19 12H5"/>',
 "calendar":'<path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/>',
 "clock":'<circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/>',
@@ -914,7 +915,7 @@ tr:{
    'yesil-donusumun-finansmani-ve-rekabet-gucu':{tag:'Etkinlik',title:'Yeşil Dönüşümün Finansmanı ve Rekabet Gücü',card:'1 Ekim 2026 · The Hood TEKMER',sum:'Sistem Global’in 30. yılında, Sistem Global ve BTS &amp; Partners ile birlikte düzenlediğimiz etkinlikte yeşil dönüşümün finansmanını ve rekabet gücünü ele alıyoruz.',
     body:['Sistem Global’in 30. yılında, Sistem Global ve <a href="https://www.linkedin.com/company/bts-&amp;-partners/" target="_blank" rel="noopener">BTS &amp; Partners</a> ile birlikte düzenlediğimiz “Yeşil Dönüşümün Finansmanı ve Rekabet Gücü” etkinliğinde; iş dünyasının dönüşüm gündemini kamu, finans, sanayi, teknoloji ve danışmanlık ekosisteminin temsilcileriyle birlikte ele alıyoruz!','Etkinlik boyunca sürdürülebilir finansman modellerinden sanayinin yeşil dönüşümüne, yapay zekâ ve inovasyondan startup–sanayi iş birliklerine kadar geleceğin rekabet ortamını şekillendiren başlıkları farklı perspektiflerle değerlendireceğiz.'],
     facts:[['calendar','1 Ekim 2026'],['clock','09:00 – 13:00'],['map-pin','<a href="https://www.linkedin.com/company/thehoodtekmer/" target="_blank" rel="noopener">The Hood TEKMER</a>']],alt:'Yeşil Dönüşümün Finansmanı ve Rekabet Gücü etkinlik davetiyesi ve programı'},
-   'gri-licensed-software-tools-partner':{tag:'Duyuru',title:'İmplika artık GRI Licensed Software &amp; Tools Partner.',card:'Video · 18 sn',sum:'İmplika, GRI Licensed Software &amp; Tools Partner oldu.',
+   'gri-licensed-software-tools-partner':{tag:'Duyuru',title:'İmplika artık GRI Licensed Software &amp; Tools Partner.',card:'Video · İngilizce · 18 sn',sum:'İmplika, GRI Licensed Software &amp; Tools Partner oldu.',
     body:['İmplika artık GRI Licensed Software &amp; Tools Partner. KOBİ’lerin ve şirketlerin sürdürülebilirlik olgunluğunu GRI standardına göre ölçen platformumuzu bu iş birliğiyle güçlendiriyoruz.','Kısa tanıtım filmimizi izleyin ve duyuruyu paylaşın.'],facts:[],alt:'İmplika GRI Licensed Software &amp; Tools Partner tanıtım videosu'}
   }},
  insights:{title:'İçgörüler',eb:'İçgörüler',h1:'Sürdürülebilirlikte bir sonraki adımı düşünün.',p:'Uzman videoları, makaleler ve regülasyon rehberleri. İmplika kullanıcıları bu içeriklere ve kendilerine özel önerilere platform içinden de ulaşır.',vEb:'Uzman videoları',vH:'Alan uzmanları regülasyonları ve finansmanı anlatıyor.',soon:'Yakında',
@@ -1041,7 +1042,7 @@ const BOARD=[['İU','İhsan Uğur Delikanlı','assets/people/ihsan-ugur-delikanl
 const ADVISORY=[['HK','Hüseyin Karslıoğlu',0],['Eİ','Elif İşgör Önen',0],['GK','Gözde Kuşçuoğlu',0],['TB','Tuğçe Balarısı',0],['MY','Mediterra Yatırım',1]];
 const NEWS=[{slug:'yesil-donusumun-finansmani-ve-rekabet-gucu',img:'assets/news/yesil-donusumun-finansmani-ve-rekabet-gucu.jpg',thumb:'assets/news/yesil-donusumun-finansmani-ve-rekabet-gucu-thumb.jpg'},{slug:'gri-licensed-software-tools-partner',yt:'gri',poster:'assets/video/implika-gri-partner-',thumb:'assets/news/gri-licensed-software-tools-partner-thumb.jpg'}];
 const SITE='https://implika.co';
-const YT={film:{tr:'mjzEa7_r5uk',en:'e5Jo8jPkw_I'},gri:{tr:'5Q3uziDZnNY',en:'v2lbOAt72EI'}};
+const YT={film:{tr:'6QFc3rUrldE',en:'8Lhms6Degmw'},gri:{tr:'U7ErGtVjzDE',en:'U7ErGtVjzDE'}};
 const ytBox=(id,poster,label)=>`<div class="yt" data-yt="${id}"><button type="button" class="yt-play" aria-label="${label}"><img src="${poster}" alt="" loading="lazy" decoding="async"><span class="yt-btn"><i data-i="play" s="26"></i></span></button></div>`;
 const shareUrl=slug=>`${SITE}/${lang==='en'?'en/':''}news/${slug}/`;
 const newsCard=n=>{const d=T().news.items[n.slug];return `<a class="video-card news-card" href="#news/${n.slug}" aria-label="${T().news.open}: ${d.title}"><div class="video-thumb has-media"><img src="${n.thumb}" alt="" loading="lazy" decoding="async">${n.yt?`<div class="play-btn"><i data-i="play" s="22"></i></div>`:''}<span class="video-topic">${d.tag}</span></div><div class="video-meta"><strong>${d.title}</strong><span>${d.card}</span></div></a>`};
@@ -1173,7 +1174,7 @@ function renderChrome(){
    <div><strong>${fo.c3}</strong><a href="#contact">${n.demo}</a><span>${fo.city}</span><a href="mailto:${EMAIL}">${EMAIL}</a></div>
   </div>
  </div>
- <div class="footer-bottom"><span>${fo.copy}</span><div class="socials"><a aria-label="${fo.li}" href="${LINKEDIN}" target="_blank" rel="noopener noreferrer"><i data-i="linkedin" s="16"></i></a><a aria-label="${fo.ig}" href="https://www.instagram.com/implika_tech/" target="_blank" rel="noopener noreferrer"><i data-i="instagram" s="16"></i></a><a aria-label="${fo.xl}" href="https://x.com/implika_tech" target="_blank" rel="noopener noreferrer"><i data-i="x-logo" s="15"></i></a></div><span>${fo.legal}</span></div>`;
+ <div class="footer-bottom"><span>${fo.copy}</span><div class="socials"><a aria-label="${fo.li}" href="${LINKEDIN}" target="_blank" rel="noopener noreferrer"><i data-i="linkedin" s="16"></i></a><a aria-label="${fo.ig}" href="https://www.instagram.com/implika_tech/" target="_blank" rel="noopener noreferrer"><i data-i="instagram" s="16"></i></a><a aria-label="${fo.xl}" href="https://x.com/implika_tech" target="_blank" rel="noopener noreferrer"><i data-i="x-logo" s="15"></i></a><a aria-label="YouTube" href="https://www.youtube.com/@%C4%B0mplika-m5k" target="_blank" rel="noopener noreferrer"><i data-i="youtube" s="17"></i></a></div><span>${fo.legal}</span></div>`;
  demoInner.innerHTML=`<button class="demo-close" type="button" aria-label="${d.close}" data-close><i data-i="x" s="20"></i></button>
  <div class="demo-header">${eb(d.eb)}<h2 id="demo-title">${d.h2}</h2></div>
  <div data-form-wrap><form class="form" data-form="demo" novalidate>
