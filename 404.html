@@ -1042,7 +1042,7 @@ const BOARD=[['İU','İhsan Uğur Delikanlı','assets/people/ihsan-ugur-delikanl
 const ADVISORY=[['HK','Hüseyin Karslıoğlu',0],['Eİ','Elif İşgör Önen',0],['GK','Gözde Kuşçuoğlu',0],['TB','Tuğçe Balarısı',0],['MY','Mediterra Yatırım',1]];
 const NEWS=[{slug:'yesil-donusumun-finansmani-ve-rekabet-gucu',img:'assets/news/yesil-donusumun-finansmani-ve-rekabet-gucu.jpg',thumb:'assets/news/yesil-donusumun-finansmani-ve-rekabet-gucu-thumb.jpg'},{slug:'gri-licensed-software-tools-partner',yt:'gri',poster:'assets/video/implika-gri-partner-',thumb:'assets/news/gri-licensed-software-tools-partner-thumb.jpg'}];
 const SITE='https://implika.co';
-const YT={film:{tr:'6QFc3rUrldE',en:'8Lhms6Degmw'},gri:{tr:'U7ErGtVjzDE',en:'U7ErGtVjzDE'}};
+const YT={film:{tr:'6QFc3rUrldE',en:'8Lhms6Degmw'},gri:{tr:'fnU4wXH-o4Y',en:'fnU4wXH-o4Y'}};
 const ytBox=(id,poster,label)=>`<div class="yt" data-yt="${id}"><button type="button" class="yt-play" aria-label="${label}"><img src="${poster}" alt="" loading="lazy" decoding="async"><span class="yt-btn"><i data-i="play" s="26"></i></span></button></div>`;
 const shareUrl=slug=>`${SITE}/${lang==='en'?'en/':''}news/${slug}/`;
 const newsCard=n=>{const d=T().news.items[n.slug];return `<a class="video-card news-card" href="#news/${n.slug}" aria-label="${T().news.open}: ${d.title}"><div class="video-thumb has-media"><img src="${n.thumb}" alt="" loading="lazy" decoding="async">${n.yt?`<div class="play-btn"><i data-i="play" s="22"></i></div>`:''}<span class="video-topic">${d.tag}</span></div><div class="video-meta"><strong>${d.title}</strong><span>${d.card}</span></div></a>`};
